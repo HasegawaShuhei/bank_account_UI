@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -52,6 +53,56 @@ class MyApp extends StatelessWidget {
                 ],
               ),
               preferredSize: Size.fromHeight(kToolbarHeight)),
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left:12, top: 12, right: 12),
+              child: Container(
+                height: 128,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left:12, top: 12, right: 12),
+              child: Container(
+                height: 128,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left:12, top: 12, right: 12),
+              child: DottedBorder(
+                borderType: BorderType.RRect,
+                radius: Radius.circular(20),
+                  child:
+                    Container(
+                      height: 100,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.add, size: 36,),
+                          Text("アカウントに口座を追加する",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+            ),
+          ],
         ),
       ),
     );
