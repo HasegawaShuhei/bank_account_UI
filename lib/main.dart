@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 100,
-          leading: FlatButton(child: Icon(Icons.home),
-            onPressed: (){
-            //todo
+          // toolbarHeight: 100,
+          leading: IconButton (
+            icon: Icon(Icons.home),
+            onPressed: () {
+            //  todo
             },
           ),
           title: Text("口座"),
@@ -36,6 +37,21 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ],
+          bottom: PreferredSize(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text("残高合計", style: TextStyle(fontSize: 20),),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 60),
+                    child: Text("""100,000,000円""", style: TextStyle(fontSize: 36),),
+                  ),
+                ],
+              ),
+              preferredSize: Size.fromHeight(kToolbarHeight)),
         ),
       ),
     );
